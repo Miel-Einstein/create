@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.10/typed.min.js"
+        integrity="sha512-hIlMpy2enepx9maXZF1gn0hsvPLerXoLHdb095CmRY5HG3bZfN7XPBZ14g+TUDH1aGgfLyPHmY9/zuU53smuMw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        /* overflow-x: hidden; */
+        box-sizing: border-box;
+
+    }
+
+    body {
+        background-color: #002;
+        color: #fff;
+    }
+
+    .Home {
+        margin-top: 30px;
+    }
+
+    .Home div {
+        display: inline-block;
+        padding: 25px 10%;
+    }
+
+    .Menu {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        width: 50%;
+        font-size: larger;
+        word-wrap: break-word;
+
+    }
+
+    .Menu span {
+        font-size: xx-large;
+    }
+
+    .Im {
+        display: block;
+        align-items: center;
+        transform: translatey(0px);
+        animation: float 6s ease-in-out infinite;
+
+    }
+
+    img {
+        border-radius: 10px;
+    }
+
+    @keyframes float {
+        0% {
+            box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+            transform: translatey(0px);
+        }
+
+        50% {
+            box-shadow: 0 25px 15px 0px rgba(0, 0, 0, 0.2);
+            transform: translatey(-20px);
+        }
+
+        100% {
+            box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+            transform: translatey(0px);
+        }
+    }
+
+    @keyframes float2 {
+        0% {
+            /* box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6); */
+            transform: translatey(0px);
+        }
+
+        50% {
+            /* box-shadow: 0 25px 15px 0px rgba(0, 0, 0, 0.2); */
+            transform: translatey(-20px);
+        }
+
+        100% {
+            /* box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6); */
+            transform: translatey(0px);
+        }
+    }
+
+    .bar {
+        display: flex;
+        height: 200%;
+        padding: 150px 10%;
+        overflow-y: hidden;
+
+
+    }
+
+
+    .bar ul {
+        position: relative;
+        transform: skewY(-15deg);
+        padding-left: 50px;
+        padding-top: 10px;
+        animation: float2 6s ease-in-out infinite;
+
+    }
+
+    .bar ul li {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        list-style: none;
+        height: 80px;
+        width: 150px;
+        background-color: #2f4550;
+        padding: 15px;
+        transition: 0.5s;
+        z-index: calc(1 * var(--i));
+
+    }
+
+    .bar ul li a {
+        text-decoration: none;
+        color: #999;
+        display: block;
+        letter-spacing: 2px;
+        transition: 0.5s;
+
+    }
+
+    .bar ul li:hover {
+        transform: translateX(-50px);
+        background-color: var(--clr);
+    }
+
+    ul li:hover a {
+        color: aliceblue;
+    }
+
+    .bar ul li::before {
+
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -40px;
+        width: 40px;
+        height: 100%;
+        background-color: #2f4550;
+        filter: brightness(0.7);
+        transform-origin: right;
+        transform: skewY(45deg);
+        transition: 0.5s;
+
+    }
+
+    .bar ul li:hover::before {
+        background-color: var(--clr);
+        filter: brightness(0.7);
+    }
+
+    .bar ul li::after {
+
+        content: "";
+        position: absolute;
+        top: -40px;
+        left: 0;
+        width: 100%;
+        height: 40px;
+        background-color: #2f4550;
+        filter: brightness(0.9);
+        transform-origin: bottom;
+        transform: skewX(45deg);
+        transition: 0.5s;
+
+    }
+
+    ul li:last-child::after {
+        box-shadow: -120px 120px 20px rgba(0, 0, 0, 0.25);
+    }
+
+    .curved {
+        background-color: #7F00FF;
+        color: #fff;
+        text-align: center;
+        margin-top: -200px;
+    }
+
+    .curved p {
+
+        margin: 2rem 5rem 0 5rem;
+        font-size: 1.5rem;
+    }
+
+    .curved svg {
+        margin-bottom: -15px;
+
+    }
+
+    .curved .theme {
+        background: #fff;
+        color: #000;
+        margin-top: -15px;
+    }
+
+    .footer .wave {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 100px;
+        background: url('wave.png');
+        background-size: 1000px 100px;
+    }
+
+    .footer .wave.wave1 {
+        animation: animate 30s linear infinite;
+        z-index: 1000;
+        opacity: 1;
+        animation-delay: 0s;
+    }
+
+    .footer .wave.wave2 {
+        animation: animate2 15s linear infinite;
+        z-index: 999;
+        opacity: 0.5;
+        animation-delay: -5s;
+        margin-top: -10px;
+    }
+
+    .footer .wave.wave3 {
+        animation: animate 30s linear infinite;
+        z-index: 998;
+        opacity: 0.2;
+        animation-delay: -2s;
+        margin-top: -10px;
+
+    }
+
+    .footer .wave.wave4 {
+        animation: animate2 10s linear infinite;
+        z-index: 997;
+        opacity: 0.7;
+        animation-delay: -5s;
+        margin-top: -20px;
+    }
+
+    @keyframes animate {
+        0% {
+            background-position-x: 0;
+        }
+
+        100% {
+            background-position-x: 1000px;
+        }
+    }
+
+    @keyframes animate2 {
+        0% {
+            background-position-x: 0;
+        }
+
+        100% {
+            background-position-x: -1000px;
+        }
+    }
+
+    .About {
+
+        height: 50vh;
+        background-color: #fff;
+        bottom: 0;
+    }
+
+    .color {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        padding: 50px 20px;
+
+
+    }
+
+    .color .wrapper div {
+        display: inline-block;
+        white-space: 10px;
+        /* box-shadow: 10px 10px 10px 10px solid #000; */
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+
+    }
+
+    .color1 {
+        background-color: yellow;
+        color: #000;
+    }
+
+    .color2 {
+        background-color: #7F00FF;
+        color: #fff;
+    }
+
+    .color3 {
+        background-color: #fff;
+        color: black;
+    }
+
+    .color4 {
+        background-color: green;
+        color: black;
+    }
+
+
+    .About {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 100px;
+
+    }
+
+    .About .card {
+        display: inline;
+        flex-wrap: wrap;
+
+        padding: 25px 10%;
+    }
+
+    .About .card img {
+        width: 100%;
+        height: 275px;
+        min-width: 160px;
+        cursor: pointer;
+
+    }
+
+    .Expertise {
+
+        display: block;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        /* background-color: #fff;
+        color: #000; */
+    }
+
+    .Contact {
+        display: block;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        /* background-color: #fff;
+        color: #000; */
+        padding-bottom: 70px;
+
+    }
+
+    .Contact .earth {
+        position: relative;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 300px;
+        height: 300px;
+        margin: auto;
+        border-radius: 50%;
+        background-image: url(https://1.bp.blogspot.com/-UUXaK5GCj-k/UcsKJRMgkVI/AAAAAAAACfM/sePP_H08JTQ/s1600/1.jpg);
+        background-size: cover;
+        box-shadow: -20px -20px 50px 2px #000 inset, 0 0 20px 2px;
+        animation: spin 30s linear alternate infinite;
+    }
+
+    @keyframes spin {
+        100% {
+            background-position: 100%;
+        }
+    }
+
+    .Expertise p {
+
+        padding-top: 60px;
+        padding-bottom: 40px;
+    }
+
+    .Expertise p {
+
+        font-size: 60px;
+    }
+
+
+    .message {
+
+        display: inline;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        height: 70vh;
+        background-color: #fff;
+    }
+
+
+
+    .Home i {
+
+        color: #999;
+        font-size: 100px;
+    }
+</style>
+
+<body>
+
+
+    <div class="color" id="Home">
+        <div class="wrapper">
+            <div class="color1" onclick="change(this)"></div>
+            <div class="color2" onclick="change(this)"></div>
+            <div class="color3" onclick="change(this)"></div>
+            <div class="color4" onclick="change(this)"></div>
+        </div>
+    </div>
+
+    <div class="Home">
+
+        <div class="Menu">
+            <audio id="playaudio" autoplay>
+                <source src="cad.mp4" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <i class="fa-solid fa-circle-pause" style="font-size: 80px;padding: 20px;cursor: pointer;" onclick="document.getElementById('playaudio').pause();
+                document.querySelector('.fa-circle-pause').style.display='none';
+                document.querySelector('.fa-circle-play').style.display='block';">Pause</i>
+            <i class="fa-solid fa-circle-play" style="font-size: 80px;padding: 20px;cursor: pointer;display:none;"
+                onclick="document.getElementById('playaudio').play(); 
+                document.querySelector('.fa-circle-pause').style.display='block';
+                document.querySelector('.fa-circle-play').style.display='none';">Play</i>
+
+            <h1>Welcome </h1>
+            A website allows you to inspire confidence and control your online communication.
+            Allowing you also to position yourself as an expert in your sector of activity & to attract fifty five
+            percent (55%) more
+            visitors.
+            <br><br>
+            I'm reicht :
+            <span id="typed3">Python specialist</span>
+
+
+
+        </div>
+        <div class="Im">
+
+            <img src="prince.PNG" alt="" width="80%" height="80%" />
+        </div>
+
+    </div>
+
+    <div class="bar">
+        <ul>
+            <li style="--i: 4; --clr :#f9c22e">
+                <a href="#Home">Home</a>
+            </li>
+            <li style="--i: 3; --clr :blue">
+                <a href="#About">Website</a>
+            </li>
+            <li style="--i: 2; --clr :black">
+                <a href="#Expertise">Expertise</a>
+            </li>
+            <li style="--i: 1; --clr :red">
+                <a href="mailto:mieleinstein@gmal.com?subject=subject&cc=princebatomene@gmal.com"> Contact
+                </a>
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="footer" id="About">
+
+        <div class="wave wave1"></div>
+        <div class="wave wave2"></div>
+        <div class="wave wave3"></div>
+        <div class="wave wave4"></div>
+
+
+    </div>
+
+
+    <br><br> <br> <br> <br>
+
+    <div class="About">
+        <div class="card">
+            <a href="https://www.maisonspirituelle.org/"> <img src="ms_pic.PNG" /></a>
+        </div>
+        <div class="card">
+            <a href="https://www.mieltube.com/"> <img src="Mieltube_pic.PNG" /></a>
+
+        </div>
+    </div>
+
+    <div class="Expertise" id="Expertise">
+
+        <p>Expert in:
+            <span id="typed4"></span>
+        </p>
+    </div>
+    <!-- <div class="Projects" id="Projects">
+
+    </div>
+    <div class="Home" id="Home">
+
+    </div>
+ -->
+    <div class="Contact" id="Contact">
+        <div class="earth">
+
+        </div>
+
+
+    </div>
+
+    <script>
+
+
+
+        const change = (z) => {
+            var a = getComputedStyle(z);
+            var b = a.backgroundColor;
+            var c = a.color;
+            document.getElementsByTagName("Body")[0].style.backgroundColor = b;
+            document.getElementsByTagName("Body")[0].style.color = c;
+
+
+        }
+
+        var typed3 = new Typed('#typed3', {
+            strings: ['Python Specialist', 'Software Developper', 'UI Designer'],
+            typeSpeed: 200,
+            backSpeed: 130,
+            smartBackspace: true, // this is a default
+            loop: true
+        });
+
+        var typed3 = new Typed('#typed4', {
+            strings: ['Testing ', 'Automation'],
+            typeSpeed: 200,
+            backSpeed: 130,
+            smartBackspace: true, // this is a default
+            loop: true
+        });
+
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/js/all.min.js"
+        integrity="sha512-rpLlll167T5LJHwp0waJCh3ZRf7pO6IT1+LZOhAyP6phAirwchClbTZV3iqL3BMrVxIYRbzGTpli4rfxsCK6Vw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+
+</html>
