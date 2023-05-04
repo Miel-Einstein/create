@@ -15,6 +15,19 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
         integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="manifest" href="manifest.json" />
+    <!-- ios support -->
+    <link rel="apple-touch-icon" href="images/icons/icon-72x72.png" />
+    <link rel="apple-touch-icon" href="images/icons/icon-96x96.png" />
+    <link rel="apple-touch-icon" href="images/icons/icon-128x128.png" />
+    <link rel="apple-touch-icon" href="images/icons/icon-144x144.png" />
+    <link rel="apple-touch-icon" href="images/icons/icon-152x152.png" />
+    <link rel="apple-touch-icon" href="images/icons/icon-192x192.png" />
+    <link rel="apple-touch-icon" href="images/icons/icon-384x384.png" />
+    <link rel="apple-touch-icon" href="images/icons/icon-512x512.png" />
+    <meta name="apple-mobile-web-app-status-bar" content="#db4938" />
+    <meta name="theme-color" content="#db4938" />
 </head>
 
 <style>
@@ -39,6 +52,38 @@
         display: inline-block;
         padding: 25px 10%;
     }
+
+    @media(max-width:938px) {
+        .Home div {
+            display: block;
+            width: 100%;
+            height: 50%;
+
+
+
+        }
+
+        .color {
+            background-color: #000;
+            height: 50px;
+        }
+
+
+
+
+        .Home .Im img {
+            width: 50%;
+            margin-top: 30px;
+            margin-left: 24%;
+        }
+
+
+
+    }
+
+
+
+
 
     .Menu {
         display: flex;
@@ -452,10 +497,10 @@
                 document.querySelector('.fa-circle-play').style.display='none';">Play</i>
 
             <h1>Welcome </h1>
-            A website allows you to inspire confidence and control your online communication.
-            Allowing you also to position yourself as an expert in your sector of activity & to attract fifty five
-            percent (55%) more
-            visitors.
+            <p> A website allows you to inspire confidence and control your online communication.
+                Allowing you also to position yourself as an expert in your sector of activity & to attract fifty five
+                percent (55%) more
+                visitors.</p>
             <br><br>
             I'm reicht :
             <span id="typed3">Python specialist</span>
